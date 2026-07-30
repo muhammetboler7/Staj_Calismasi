@@ -28,7 +28,7 @@ sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."
 
 # ============================== SABITLER ==============================
 # Karelerin SIRAYLA (dosya adina gore artan) bulundugu klasor.
-FRAMES_DIR = "bir_klasor_dolusu_kare"
+FRAMES_DIR = "/home/pc_5053/GSS/seyma2/havacilikta-yapay-zeka-Sunucu-Gelistirmeleri/media/THYZ_2026_Online_Yarisma/"
 
 # Sonuc CSV'sinin yazilacagi yol.
 OUTPUT_CSV = "./gorev2_ciktisi.csv"
@@ -47,7 +47,7 @@ SETTINGS_PATH = None    # ornek: farkli cozunurluk/kamera icin yeni bir .yaml
 # translation_z - translation_gt.csv ile ayni format), ilk CALIB_FRAMES kare
 # "kalibrasyon" (GT biliniyormus gibi) sayilir, sonrasi OnlineAligner ile
 # tahmin edilir.
-GT_CSV = None
+GT_CSV = "/home/pc_5053/GSS/seyma2/havacilikta-yapay-zeka-Sunucu-Gelistirmeleri/translations/THYZ_2026_Online_Yarisma.csv"
 CALIB_FRAMES = 450   # GT_CSV verildiyse, ilk bu kadar kare kalibrasyon sayilir
 
 IMG_EXTS = (".jpg", ".jpeg", ".png", ".webp", ".bmp")

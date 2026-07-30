@@ -10,3 +10,14 @@ havacilikta-yapay-zeka-yarismasi/tek_kullanimlik/*.pt
 # Python derlenmis bytecode.
 __pycache__/
 *.pyc
+
+# ORB-SLAM3 CMake build ara-dosyalari (.o, cache vb.) - calisan .so/binary
+# zaten ayrica tutuluyor (lib/, Thirdparty/*/lib/), bunlar sadece yeniden
+# derleme ara-cikitisi, calisma zamaninda gerekmiyor.
+havacilikta-yapay-zeka-yarismasi/gps_denied_localization/tools/ORB_SLAM3/Thirdparty/*/build/
+
+# Kullanilmayan sensor-modu ornekleri (biz sadece mono_tuyz* kullaniyoruz).
+havacilikta-yapay-zeka-yarismasi/gps_denied_localization/tools/ORB_SLAM3/Examples/Monocular/mono_euroc
+havacilikta-yapay-zeka-yarismasi/gps_denied_localization/tools/ORB_SLAM3/Examples/Monocular/mono_kitti
+havacilikta-yapay-zeka-yarismasi/gps_denied_localization/tools/ORB_SLAM3/Examples/Monocular/mono_tum
+havacilikta-yapay-zeka-yarismasi/gps_denied_localization/tools/ORB_SLAM3/Examples/Monocular/mono_tum_vi
