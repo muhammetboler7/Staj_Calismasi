@@ -1,0 +1,12 @@
+# ORB-SLAM3 kelime dagarcigi - 139MB, GitHub'in 100MB dosya limitini asiyor.
+# Yerelde durmasi gerekir (orbslam_stream.py bunu bekler); resmi kaynagi:
+# https://github.com/UZ-SLAMLab/ORB_SLAM3/blob/master/Vocabulary/ORBvoc.txt.tar.gz
+havacilikta-yapay-zeka-yarismasi/gps_denied_localization/tools/ORB_SLAM3/Vocabulary/ORBvoc.txt
+
+# tek_kullanimlik/ scriptleri calistirinca YOLOE agirligi buraya inebilir
+# (ilk calistirmada otomatik indirilir, tekrar tekrar commit'e girmesin).
+havacilikta-yapay-zeka-yarismasi/tek_kullanimlik/*.pt
+
+# Python derlenmis bytecode.
+__pycache__/
+*.pyc

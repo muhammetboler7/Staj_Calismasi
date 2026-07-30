@@ -1,0 +1,46 @@
+%YAML:1.0
+
+# THYZ_2025_Oturum_1 icin aday kalibrasyon B.
+# Kaynak: Kamera_Kalibrasyon_Parametreleri_2026.txt -> "RGB Camera 1080p Intrinsics"
+# (native 1920x1080, fx=1389.7 fy=1387.1 cx=954.007 cy=558.896 k1=0.1378 k2=-0.2564)
+# Video 3840x2160'a temiz 2x olcekleme (1920x1080 ve 3840x2160 ayni 16:9 en-boy orani,
+# kirpma varsayimi GEREKMIYOR - kalibrasyon A'nin (4K profili) aksine).
+
+File.version: "1.0"
+
+Camera.type: "PinHole"
+
+Camera1.fx: 2779.4
+Camera1.fy: 2774.2
+Camera1.cx: 1908.014
+Camera1.cy: 1117.792
+
+Camera1.k1: 0.1378
+Camera1.k2: -0.2564
+Camera1.p1: 0.0
+Camera1.p2: 0.0
+
+Camera.fps: 30
+Camera.RGB: 1
+Camera.width: 3840
+Camera.height: 2160
+
+Camera.newWidth: 1920
+Camera.newHeight: 1080
+
+ORBextractor.nFeatures: 3000
+ORBextractor.scaleFactor: 1.2
+ORBextractor.nLevels: 8
+ORBextractor.iniThFAST: 20
+ORBextractor.minThFAST: 7
+
+Viewer.KeyFrameSize: 0.05
+Viewer.KeyFrameLineWidth: 1.0
+Viewer.GraphLineWidth: 0.9
+Viewer.PointSize: 2.0
+Viewer.CameraSize: 0.08
+Viewer.CameraLineWidth: 3.0
+Viewer.ViewpointX: 0.0
+Viewer.ViewpointY: -0.7
+Viewer.ViewpointZ: -1.8
+Viewer.ViewpointF: 500.0

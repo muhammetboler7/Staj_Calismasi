@@ -1,0 +1,58 @@
+%YAML:1.0
+
+# THYZ_2025_Oturum_1 icin kamera parametreleri.
+# Kaynak: Kamera_Kalibrasyon_Parametreleri_2025.txt (RGB, sensor 4000x3000,
+# fx=2792.2 fy=2795.2 cx=1988.0 cy=1562.2, k1=0.0798 k2=-0.1867)
+# Video 3840x2160'a uyarlama varsayimi: tam genislik okuma (olcek 0.96) +
+# dikey merkez kirpma (3000->2250):
+#   fx' = 2792.2*0.96 = 2680.5   cx' = 1988.0*0.96  = 1908.5
+#   fy' = 2795.2*0.96 = 2683.4   cy' = (1562.2-375)*0.96 = 1139.8
+# Distorsiyon katsayilari normalize koordinatta oldugu icin degismez.
+
+File.version: "1.0"
+
+Camera.type: "PinHole"
+
+Camera1.fx: 2680.5
+Camera1.fy: 2683.4
+Camera1.cx: 1908.5
+Camera1.cy: 1139.8
+
+Camera1.k1: 0.0798
+Camera1.k2: -0.1867
+Camera1.p1: 0.0
+Camera1.p2: 0.0
+
+Camera.fps: 30
+
+Camera.RGB: 1
+
+Camera.width: 3840
+Camera.height: 2160
+
+# Islem hizi icin iceride 1920x1080'e kucult (ORB-SLAM3 kalibrasyonu otomatik olcekler)
+Camera.newWidth: 1920
+Camera.newHeight: 1080
+
+#--------------------------------------------------------------------------------------------
+# ORB Parameters
+#--------------------------------------------------------------------------------------------
+ORBextractor.nFeatures: 3000
+ORBextractor.scaleFactor: 1.2
+ORBextractor.nLevels: 8
+ORBextractor.iniThFAST: 20
+ORBextractor.minThFAST: 7
+
+#--------------------------------------------------------------------------------------------
+# Viewer Parameters
+#--------------------------------------------------------------------------------------------
+Viewer.KeyFrameSize: 0.05
+Viewer.KeyFrameLineWidth: 1.0
+Viewer.GraphLineWidth: 0.9
+Viewer.PointSize: 2.0
+Viewer.CameraSize: 0.08
+Viewer.CameraLineWidth: 3.0
+Viewer.ViewpointX: 0.0
+Viewer.ViewpointY: -0.7
+Viewer.ViewpointZ: -1.8
+Viewer.ViewpointF: 500.0

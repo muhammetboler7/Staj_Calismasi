@@ -1,0 +1,54 @@
+%YAML:1.0
+
+# TUYZ_Video_1 icin kamera parametreleri.
+# Kaynak: COLMAP self-calibration (58 frame, OPENCV modeli, 0.51 px reproj. hatasi)
+# EXIF/metadata KULLANILMADI - tamamen piksellerden kestirildi.
+
+File.version: "1.0"
+
+Camera.type: "PinHole"
+
+Camera1.fx: 1743.079
+Camera1.fy: 1817.822
+Camera1.cx: 808.663
+Camera1.cy: 517.468
+
+Camera1.k1: 0.009358
+Camera1.k2: 0.050594
+Camera1.p1: 0.000670
+Camera1.p2: 0.006907
+
+# Frameler videodan 4'er atlanmis; orijinal video 30 fps -> efektif ~7.5 fps
+# (ORB-SLAM3 tamsayi istiyor)
+Camera.fps: 8
+
+Camera.RGB: 1
+
+Camera.width: 1920
+Camera.height: 1080
+
+#--------------------------------------------------------------------------------------------
+# ORB Parameters
+#--------------------------------------------------------------------------------------------
+
+# 1920x1080 havadan goruntude yeterli takip icin yuksek ozellik sayisi
+ORBextractor.nFeatures: 3000
+
+ORBextractor.scaleFactor: 1.2
+ORBextractor.nLevels: 8
+ORBextractor.iniThFAST: 20
+ORBextractor.minThFAST: 7
+
+#--------------------------------------------------------------------------------------------
+# Viewer Parameters
+#--------------------------------------------------------------------------------------------
+Viewer.KeyFrameSize: 0.05
+Viewer.KeyFrameLineWidth: 1.0
+Viewer.GraphLineWidth: 0.9
+Viewer.PointSize: 2.0
+Viewer.CameraSize: 0.08
+Viewer.CameraLineWidth: 3.0
+Viewer.ViewpointX: 0.0
+Viewer.ViewpointY: -0.7
+Viewer.ViewpointZ: -1.8
+Viewer.ViewpointF: 500.0

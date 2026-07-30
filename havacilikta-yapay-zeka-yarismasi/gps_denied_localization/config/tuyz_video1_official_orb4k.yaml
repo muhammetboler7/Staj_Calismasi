@@ -1,0 +1,54 @@
+%YAML:1.0
+
+# TUYZ_Video_1 icin kamera parametreleri.
+# Kaynak: resmi kalibrasyon dosyasi (RGB Camera 1080p Intrinsics, 2026)
+# EXIF/metadata KULLANILMADI - tamamen piksellerden kestirildi.
+
+File.version: "1.0"
+
+Camera.type: "PinHole"
+
+Camera1.fx: 1389.7
+Camera1.fy: 1387.1
+Camera1.cx: 954.007
+Camera1.cy: 558.896
+
+Camera1.k1: 0.1378
+Camera1.k2: -0.2564
+Camera1.p1: 0.0
+Camera1.p2: 0.0
+
+# Frameler videodan 4'er atlanmis; orijinal video 30 fps -> efektif ~7.5 fps
+# (ORB-SLAM3 tamsayi istiyor)
+Camera.fps: 8
+
+Camera.RGB: 1
+
+Camera.width: 1920
+Camera.height: 1080
+
+#--------------------------------------------------------------------------------------------
+# ORB Parameters
+#--------------------------------------------------------------------------------------------
+
+# 1920x1080 havadan goruntude yeterli takip icin yuksek ozellik sayisi
+ORBextractor.nFeatures: 4000
+
+ORBextractor.scaleFactor: 1.2
+ORBextractor.nLevels: 8
+ORBextractor.iniThFAST: 15
+ORBextractor.minThFAST: 7
+
+#--------------------------------------------------------------------------------------------
+# Viewer Parameters
+#--------------------------------------------------------------------------------------------
+Viewer.KeyFrameSize: 0.05
+Viewer.KeyFrameLineWidth: 1.0
+Viewer.GraphLineWidth: 0.9
+Viewer.PointSize: 2.0
+Viewer.CameraSize: 0.08
+Viewer.CameraLineWidth: 3.0
+Viewer.ViewpointX: 0.0
+Viewer.ViewpointY: -0.7
+Viewer.ViewpointZ: -1.8
+Viewer.ViewpointF: 500.0

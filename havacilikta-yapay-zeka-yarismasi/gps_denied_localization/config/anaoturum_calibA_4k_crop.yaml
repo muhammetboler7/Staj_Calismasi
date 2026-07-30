@@ -1,0 +1,45 @@
+%YAML:1.0
+
+# 2024_TUYZ_Online_Yarisma_Ana_Oturum icin aday kalibrasyon A.
+# Kaynak: Kamera_Kalibrasyon_Parametreleri_2025.txt / _2026.txt "RGB Camera 4K"
+# (native 4000x3000, iki dosyada birebir ayni deger).
+# Video 1920x1080'e temiz 2x olcekleme DEGIL - 4:3 kaynaktan 16:9 hedefe
+# tam genislik + dikey merkez kirpma varsayimiyla uyarlandi (crop=180px/kenar).
+
+File.version: "1.0"
+
+Camera.type: "PinHole"
+
+Camera1.fx: 1340.26
+Camera1.fy: 1341.70
+Camera1.cx: 954.24
+Camera1.cy: 569.86
+
+Camera1.k1: 0.0798
+Camera1.k2: -0.1867
+Camera1.p1: 0.0
+Camera1.p2: 0.0
+
+# Frameler videodan 4'er atlanmis; orijinal video 30 fps -> efektif ~7.5 fps
+Camera.fps: 8
+
+Camera.RGB: 1
+Camera.width: 1920
+Camera.height: 1080
+
+ORBextractor.nFeatures: 3000
+ORBextractor.scaleFactor: 1.2
+ORBextractor.nLevels: 8
+ORBextractor.iniThFAST: 20
+ORBextractor.minThFAST: 7
+
+Viewer.KeyFrameSize: 0.05
+Viewer.KeyFrameLineWidth: 1.0
+Viewer.GraphLineWidth: 0.9
+Viewer.PointSize: 2.0
+Viewer.CameraSize: 0.08
+Viewer.CameraLineWidth: 3.0
+Viewer.ViewpointX: 0.0
+Viewer.ViewpointY: -0.7
+Viewer.ViewpointZ: -1.8
+Viewer.ViewpointF: 500.0

@@ -24,8 +24,9 @@ import subprocess
 import time
 from pathlib import Path
 
-# TAKIM_BAGLANTI_ARAYUZU/src/orbslam_stream.py -> ... -> Muhammet_Boler
-_REPO_ROOT = Path(__file__).resolve().parents[3]
+# TAKIM_BAGLANTI_ARAYUZU/src/orbslam_stream.py -> ... -> havacilikta-yapay-zeka-yarismasi
+# (gps_denied_localization artik bu klasorun ICINDE, disarida degil)
+_REPO_ROOT = Path(__file__).resolve().parents[2]
 _ORBSLAM_ROOT = _REPO_ROOT / "gps_denied_localization" / "tools" / "ORB_SLAM3"
 
 DEFAULT_BINARY = _ORBSLAM_ROOT / "Examples" / "Monocular" / "mono_tuyz_stream"

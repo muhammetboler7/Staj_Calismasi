@@ -1,0 +1,49 @@
+%YAML:1.0
+
+# THYZ_2025_Oturum_4 icin kamera parametreleri (TERMAL kamera, 640x512).
+# Kaynak: Kamera_Kalibrasyon_Parametreleri_2025.txt / _2026.txt "Termal Camera
+# Intrinsics" (iki dosyada birebir ayni deger) - native cozunurluk, olcekleme yok.
+
+File.version: "1.0"
+
+Camera.type: "PinHole"
+
+Camera1.fx: 731.7965
+Camera1.fy: 732.0172
+Camera1.cx: 319.2367
+Camera1.cy: 251.2424
+
+Camera1.k1: -0.3507
+Camera1.k2: 0.1137
+Camera1.p1: 0.0
+Camera1.p2: 0.0
+
+Camera.fps: 30
+Camera.RGB: 1
+Camera.width: 640
+Camera.height: 512
+
+#--------------------------------------------------------------------------------------------
+# ORB Parameters
+#--------------------------------------------------------------------------------------------
+# Termal goruntu dusuk kontrastli/az dokulu; FAST esiklerini dusurup
+# hassasiyeti artiriyoruz, kucuk cozunurluk icin nFeatures azaltildi.
+ORBextractor.nFeatures: 2000
+ORBextractor.scaleFactor: 1.2
+ORBextractor.nLevels: 8
+ORBextractor.iniThFAST: 10
+ORBextractor.minThFAST: 5
+
+#--------------------------------------------------------------------------------------------
+# Viewer Parameters
+#--------------------------------------------------------------------------------------------
+Viewer.KeyFrameSize: 0.05
+Viewer.KeyFrameLineWidth: 1.0
+Viewer.GraphLineWidth: 0.9
+Viewer.PointSize: 2.0
+Viewer.CameraSize: 0.08
+Viewer.CameraLineWidth: 3.0
+Viewer.ViewpointX: 0.0
+Viewer.ViewpointY: -0.7
+Viewer.ViewpointZ: -1.8
+Viewer.ViewpointF: 500.0
