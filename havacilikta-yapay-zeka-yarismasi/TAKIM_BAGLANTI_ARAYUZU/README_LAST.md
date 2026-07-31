@@ -146,6 +146,22 @@ modüllerin başındaki sabit yollardan/isimlerden otomatik yüklenir; DINOv2/
 YOLOE ilk çalıştırmada `~/.cache`'e (ya da taşınmışsa proje-özel cache'e)
 indirilir.
 
+**Farklı model/kamera ile çalıştırmak istersen `src/` içine hiç girmene gerek
+yok** — `main.py`'nin en üstünde bir SABİTLER bloğu var:
+```python
+MODEL_PATH_OVERRIDE = None      # Gorev 1: farkli bir YOLO agirligi
+ORBSLAM_BINARY_PATH = None      # Gorev 2: farkli bir mono_tuyz_stream ikilisi
+ORBSLAM_VOCAB_PATH = None       # Gorev 2: farkli bir ORBvoc.txt
+ORBSLAM_SETTINGS_PATH = None    # Gorev 2: farkli kamera/cozunurluk icin yeni .yaml
+```
+Hepsi `None` bırakılırsa (varsayılan) sistem, yarışmada kullanılan orijinal
+ağırlık/ORB-SLAM3 dosyalarıyla aynen çalışır — hiçbir şey değişmez. Farklı bir
+kamera/videoyla denemek istersen genelde tek satır yeterli:
+`ORBSLAM_SETTINGS_PATH = ".../yeni_kamera.yaml"` (bkz. §5.1, yeni `.yaml`
+nasıl oluşturulur). Bu 4 sabit, `ObjectDetectionModel`'in ilgili
+parametrelerine (`model_path`, `orbslam_binary_path`, `orbslam_vocab_path`,
+`orbslam_settings_path`) doğrudan aktarılır.
+
 ---
 
 ## 3) `src/` Modülleri

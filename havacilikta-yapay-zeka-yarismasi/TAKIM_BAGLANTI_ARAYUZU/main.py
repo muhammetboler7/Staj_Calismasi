@@ -13,6 +13,25 @@ from src.object_detection_model import ObjectDetectionModel
 # even when image downloads are fast. 300/m = 5/s; 0.25s floor → max ~4/s with headroom.
 MIN_FRAME_INTERVAL = 0.25
 
+# ============================== SABITLER ==============================
+# Farkli bir model/kamera ile calistirmak istersen bu blogu duzenle - main.py
+# calisma mantigina hic dokunmadan burasi yeterli (bkz. README_LAST.md §7).
+
+# Gorev 1: None birakilirsa src/object_detection_model.py'deki varsayilan
+# MODEL_PATH (yarismada kullanilan YOLO agirligi) kullanilir. Baska bir
+# egitilmis agirlik denemek icin tam dosya yolunu yaz.
+MODEL_PATH_OVERRIDE = None
+
+# Gorev 2: uc'u de None birakilirsa src/orbslam_stream.py'deki
+# DEFAULT_BINARY/DEFAULT_VOCAB/DEFAULT_SETTINGS (gps_denied_localization/
+# altindaki hazir dosyalar) kullanilir. Farkli bir video/kamera icin sadece
+# ORBSLAM_SETTINGS_PATH'i (kamera kalibrasyonu + ORB parametreleri, bkz.
+# README_LAST.md §5.1) degistirmen yeterli olur cogu zaman.
+ORBSLAM_BINARY_PATH = None
+ORBSLAM_VOCAB_PATH = None
+ORBSLAM_SETTINGS_PATH = None
+# ========================================================================
+
 
 def configure_logger(team_name):
     log_folder = "./_logs/"
@@ -31,7 +50,13 @@ def run():
 
     configure_logger(team_name)
 
-    detection_model = ObjectDetectionModel(evaluation_server_url)
+    detection_model = ObjectDetectionModel(
+        evaluation_server_url,
+        model_path=MODEL_PATH_OVERRIDE,
+        orbslam_binary_path=ORBSLAM_BINARY_PATH,
+        orbslam_vocab_path=ORBSLAM_VOCAB_PATH,
+        orbslam_settings_path=ORBSLAM_SETTINGS_PATH,
+    )
 
     server = ConnectionHandler(evaluation_server_url, username=team_name, password=password)
 

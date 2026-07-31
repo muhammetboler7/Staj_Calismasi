@@ -185,7 +185,8 @@ PERSON_NAME = "İnsan"
 class ObjectDetectionModel:
     # Base class for team models
 
-    def __init__(self, evaluation_server_url, model_path=None, enable_slam=True):
+    def __init__(self, evaluation_server_url, model_path=None, enable_slam=True,
+                 orbslam_binary_path=None, orbslam_vocab_path=None, orbslam_settings_path=None):
         logging.info('Created Object Detection Model')
         self.evaulation_server = evaluation_server_url
         # Gorev 1 modeli bir kere yuklenir; her karede yeniden yuklenmez.
@@ -260,7 +261,9 @@ class ObjectDetectionModel:
         # enable_slam=False: Gorev 2 tamamen devre disi (orn. yalniz Gorev 1/3'u
         # denemek/render etmek icin) - ORB-SLAM3 sureci hic baslatilmaz.
         if enable_slam:
-            self.orbslam = OrbSlamStream(stderr_log_path="./_logs/orbslam_stream.log")
+            self.orbslam = OrbSlamStream(
+                binary_path=orbslam_binary_path, vocab_path=orbslam_vocab_path,
+                settings_path=orbslam_settings_path, stderr_log_path="./_logs/orbslam_stream.log")
             self.aligner = OnlineAligner()
             self.translation_log = TranslationComparisonLogger()
         else:
