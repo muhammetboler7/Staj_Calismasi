@@ -315,6 +315,31 @@ Bu dosyayı değiştirdikten sonra kod tarafında hiçbir şey değişmez — sa
 `OrbSlamStream()` çağrılırken `settings_path` ile bu güncellenmiş yolu
 vermen (ya da `DEFAULT_SETTINGS`'i güncellemen) yeterli.
 
+**Yarışma sana kalibrasyonu hazır bir txt olarak veriyorsa (asıl senaryo):**
+Yarışma organizasyonu her seferinde `Kamera_Kalibrasyon_Parametreleri_20XX.txt`
+gibi bir dosya veriyor (bkz. `havacilikta-yapay-zeka-yarismasi/Kamera_Kalibrasyon/`
+altındaki örnekler — genelde Termal/4K/1080p gibi birkaç kamera modu için ayrı
+ayrı satırlar içerir). Bu dosyadaki değerler `.yaml`'a DOĞRUDAN, hiçbir
+kalibrasyon hesabı yapmadan aktarılır — `thyz2026.yaml` zaten aynen bu txt'nin
+"RGB Camera 1080p Intrinsics" bölümünden üretildi (sayılar birebir eşleşiyor):
+
+| txt'deki alan | `.yaml`'daki karşılığı |
+|---|---|
+| `FocalLength: [a b]` | `Camera1.fx: a`, `Camera1.fy: b` |
+| `PrincipalPoint: [a b]` | `Camera1.cx: a`, `Camera1.cy: b` |
+| `RadialDistortion: [a b]` | `Camera1.k1: a`, `Camera1.k2: b` |
+| `TangentialDistortion: [a b]` | `Camera1.p1: a`, `Camera1.p2: b` |
+| `ImageSize: [h w]` | `Camera.height: h`, `Camera.width: w` |
+
+Yani yeni bir yarışma/oturumda: txt'de hangi kamera modunu (Termal/4K/1080p)
+kullanacaksan o bölümün 5 satırını yukarıdaki tabloya göre `.yaml`'a
+kopyala/gir (`ORBextractor.*` satırlarına dokunma, onlar kalibrasyonla
+ilgili değil) — bu genelde **tek ihtiyacın olan değişikliktir**.
+`MODEL_PATH_OVERRIDE`/`ORBSLAM_BINARY_PATH`/`ORBSLAM_VOCAB_PATH`'e (bkz. §2)
+normal şartlarda hiç dokunmazsın — bunlar aynı model/ikili kullanılmaya
+devam ettiği sürece hep `None` kalır, sadece kamera (`ORBSLAM_SETTINGS_PATH`)
+değişir.
+
 ### 5.2 Python tarafı (`orbslam_stream.py`)
 `OrbSlamStream`, `mono_tuyz_stream` sürecini `subprocess.Popen` ile başlatır:
 `os.pipe()` ile bir okuma/yazma ucu çifti açılır, yazma ucu `pass_fds` ile
